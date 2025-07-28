@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { motion } from 'framer-motion';
 import HeroSection from '../components/HeroSection';
 import WorkSection from '../components/WorkSection';
@@ -8,7 +8,11 @@ import WritingSection from '../components/WritingSection';
 import AboutSection from '../components/AboutSection';
 import IntroAnimation from '../components/IntroAnimation';
 
-const MotionSection = ({ children }) => {
+type MotionSectionProps = {
+  children: ReactNode;
+};
+
+const MotionSection = ({ children }: MotionSectionProps) => {
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -16,7 +20,7 @@ const MotionSection = ({ children }) => {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: 'easeOut',
+        ease: 'easeOut' as const,
       },
     },
   };

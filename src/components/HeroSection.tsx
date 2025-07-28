@@ -2,15 +2,26 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Card from './Card';
 import ProjectCard from './ProjectCard';
+import { ReactNode } from 'react';
 
-const GridItem = ({ children, gridArea, delay = 0 }) => {
+type GridItemProps = {
+  children: ReactNode;
+  gridArea: string;
+  delay?: number;
+};
+
+const GridItem = ({ children, gridArea, delay = 0 }: GridItemProps) => {
   const itemVariants = {
     hidden: { opacity: 0, filter: 'blur(10px)', y: 20 },
     visible: {
       opacity: 1,
       filter: 'blur(0px)',
       y: 0,
-      transition: { duration: 0.7, ease: [0.6, -0.05, 0.01, 0.99], delay },
+      transition: {
+        duration: 0.7,
+        ease: [0.6, -0.05, 0.01, 0.99] as const,
+        delay,
+      },
     },
   };
 
