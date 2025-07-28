@@ -12,7 +12,7 @@ const Card = ({ children, className, delay = 0 }: CardProps) => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeInOut', delay },
+      transition: { duration: 0.6, ease: 'easeInOut' as const, delay },
     },
   };
 

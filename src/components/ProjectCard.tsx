@@ -53,7 +53,7 @@ const ProjectCard = ({
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                onClick={(e) => e.stopPropagation()} // Prevent modal from closing when clicking inside
+                onClick={(e) => e.stopPropagation()}
               >
                 <h2 className="text-2xl font-bold mb-4">요약 정보</h2>
                 <strong className="text-xl font-semibold mb-4">{name}</strong>

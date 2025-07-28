@@ -3,7 +3,11 @@ import { motion } from 'framer-motion';
 const DynamicCard = () => {
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeInOut', delay: 0.4 } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: 'easeInOut' as const, delay: 0.4 },
+    },
   };
 
   return (
@@ -19,9 +23,9 @@ const DynamicCard = () => {
         }}
         transition={{
           duration: 4,
-          ease: "easeInOut",
+          ease: 'easeInOut',
           repeat: Infinity,
-          repeatType: "reverse",
+          repeatType: 'reverse',
         }}
       >
         <p className="text-white font-bold text-lg">Portfolio</p>

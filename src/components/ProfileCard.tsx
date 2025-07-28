@@ -4,7 +4,11 @@ import Image from 'next/image';
 const ProfileCard = () => {
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeInOut' } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: 'easeInOut' as const },
+    },
   };
 
   return (
@@ -13,7 +17,13 @@ const ProfileCard = () => {
       variants={cardVariants}
     >
       <div className="w-32 h-32 rounded-full overflow-hidden mb-4 border-2 border-gray-lighter">
-        <Image src="/placeholder-profile.svg" alt="Profile Picture" width={128} height={128} className="object-cover" />
+        <Image
+          src="/placeholder-profile.svg"
+          alt="Profile Picture"
+          width={128}
+          height={128}
+          className="object-cover"
+        />
       </div>
       <h1 className="text-2xl font-bold text-text-primary">BYEON JEONG MIN</h1>
       <p className="text-text-primary/80">Frontend Developer</p>
