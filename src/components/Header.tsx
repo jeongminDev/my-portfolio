@@ -10,12 +10,14 @@ const Header = () => {
         <Link
           href="https://github.com/jeongminDev"
           className="text-text-primary hover:opacity-70 transition-opacity"
+          target="blank"
         >
           GitHub
         </Link>
         <Link
           href="https://velog.io/@bjm4256"
           className="text-text-primary hover:opacity-70 transition-opacity"
+          target="blank"
         >
           Velog
         </Link>

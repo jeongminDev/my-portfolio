@@ -55,7 +55,7 @@ const HeroSection = () => {
               Front-End
             </h1>
             <p className="w-full text-4xl font-medium absolute top-1/2 -translate-y-1/2 text-gray-600 opacity-70 z-10">
-              프론트엔드 개발자
+              프론트엔드 개발자{' '}
               <span className="text-5xl font-bold">변정민</span> 입니다.
             </p>
           </div>

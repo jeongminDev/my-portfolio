@@ -8,7 +8,7 @@ import ScrollToTop from '../components/ScrollToTop';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
-  title: '변정민 포트폴리오',
+  title: 'JeongMin Portfolio',
   description: '프론트엔드 개발자 변정민의 포트폴리오입니다.',
 };
 
