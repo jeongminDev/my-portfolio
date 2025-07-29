@@ -112,11 +112,11 @@ const HeroSection = () => {
                     Career
                   </h3>
                   <ul className="space-y-1 text-text-primary/80 text-sm">
-                    <li className="hover:text-accent-pink transition-colors cursor-pointer">
+                    <li>
                       2022.01 ~ 2023.05 - 주식회사 에이피메타랩스
                       웹디자이너/퍼블리셔 근무
                     </li>
-                    <li className="hover:text-accent-pink transition-colors cursor-pointer">
+                    <li>
                       2021.03 ~ 2021.10 - (주)그린비지니스 웹디자이너 근무
                     </li>
                   </ul>

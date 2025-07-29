@@ -1,3 +1,29 @@
+import StyledListItem from './StyledListItem';
+import {
+  FaJs,
+  FaReact,
+  FaFigma,
+  FaGithub,
+  FaSlack,
+  FaJira,
+} from 'react-icons/fa';
+import {
+  SiTypescript,
+  SiNextdotjs,
+  SiStyledcomponents,
+  SiFramer,
+  SiTailwindcss,
+  SiAxios,
+  SiJest,
+  SiTestinglibrary,
+  SiAdobeillustrator,
+  SiAdobephotoshop,
+  SiNotion,
+} from 'react-icons/si';
+import { TbBrandReactNative } from 'react-icons/tb';
+import { LuServerCog } from 'react-icons/lu';
+import { BsClipboardCheck } from 'react-icons/bs';
+
 const AboutSection = () => {
   return (
     <section className="py-16 text-black">
@@ -6,39 +32,125 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
             <h3 className="text-2xl font-bold mb-4">My Info</h3>
-            <ul className="list-disc list-inside">
-              <li>이름 : 변정민</li>
-              <li>생년월일 : 1993.10.09</li>
-              <li>이메일 : jeongmin4256@gmail.com</li>
+            <ul>
+              <StyledListItem>이름 : 변정민</StyledListItem>
+              <StyledListItem>생년월일 : 1993.10.09</StyledListItem>
+              <StyledListItem>이메일 : jeongmin4256@gmail.com</StyledListItem>
+              <StyledListItem>
+                유한대학교 기계설계과 졸업 (2017.02)
+              </StyledListItem>
+              <StyledListItem>
+                웹 디자인 기능사 (HTML5, CSS3, JQ)
+                <br />
+                취득 및 실무 양성 (B) 과정 수료 (2020.09 ~ 2021.01)
+              </StyledListItem>
+              <StyledListItem>
+                제로베이스 프론트엔드 과정 부트캠프 수료 (2024.01 ~ 2024.10)
+              </StyledListItem>
             </ul>
           </div>
           <div>
             <h3 className="text-2xl font-bold mb-4">
-              Education & Certificates
+              Certificates & Experience
             </h3>
-            <ul className="list-disc list-inside">
-              <li>유한대학교 졸업 (2017.02)</li>
-              <li>
-                웹 디자인 기능사 (HTML5, CSS3, JQ) 취득 및 실무 양성 (B) 과정
-                수료 (2020.09 ~ 2021.01)
+            <ul>
+              <StyledListItem>2종보통 운전면허증 취득 (2012.07)</StyledListItem>
+              <StyledListItem>
+                컴퓨터 활용능력 2급 취득 (2020.07)
+              </StyledListItem>
+              <StyledListItem>
+                GTQ 그래픽 기술자격 1급 취득 (2020.12)
+              </StyledListItem>
+              <StyledListItem>웹 디자인 기능사 (2021.03)</StyledListItem>
+              <StyledListItem>
+                정보처리기능사 자격증 취득 (2025.07)
+              </StyledListItem>
+              <li className="my-2">
+                <hr />
               </li>
-              <li>정보처리기능사 자격증 취득중 (필기 합격) (2023.10)</li>
-              <li>2종보통 운전면허증 취득 (2012.07)</li>
-              <li>컴퓨터 활용능력 2급 취득 (2020.07)</li>
-              <li>GTQ 그래픽 기술자격 1급 취득 (2020.12)</li>
-              <li>웹 디자인 기능사 (2021.03)</li>
+              <StyledListItem>
+                (주)그린비지니스 웹디자이너 근무 (2021.03 ~ 2021.10)
+              </StyledListItem>
+              <StyledListItem>
+                주식회사 에이피메타랩스 웹디자이너/퍼블리셔 근무 (2022.01 ~
+                2023.05)
+              </StyledListItem>
             </ul>
           </div>
           <div>
-            <h3 className="text-2xl font-bold mb-4">Experience</h3>
-            <ul className="list-disc list-inside">
-              <li>(주)그린비지니스 웹디자이너 근무 (2021.03 ~ 2021.10)</li>
+            <h3 className="text-2xl font-bold mb-4">Skills & Tools</h3>
+            <ul className="flex flex-wrap gap-4">
               <li>
-                주식회사 에이피메타랩스 웹디자이너/퍼블리셔 근무 (2022.01 ~
-                2023.05)
+                <ul>
+                  <li className="flex items-center gap-2">
+                    <FaJs /> JavaScript
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <FaReact /> React
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <SiTypescript /> TypeScript
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <SiNextdotjs /> NextJs
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <TbBrandReactNative /> ReactNative
+                  </li>
+                </ul>
               </li>
               <li>
-                제로베이스 프론트엔드 과정 부트캠프 수료 (2024.01 ~ 2024.10)
+                <ul>
+                  <li className="flex items-center gap-2">
+                    <SiStyledcomponents /> styled-components
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <SiFramer /> framer-motion
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <SiTailwindcss /> Tailwind CSS
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <BsClipboardCheck /> Zustand
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <SiAxios /> Axios
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <SiJest /> Jest
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <SiTestinglibrary /> React Testing Library
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <LuServerCog /> Mock Server Work
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li className="flex items-center gap-2">
+                    <FaFigma /> Figma
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <FaJira /> Jira
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <SiAdobeillustrator /> Illustrator
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <SiAdobephotoshop /> Photoshop
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <FaGithub /> github
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <SiNotion /> Notion
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <FaSlack /> slack
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>

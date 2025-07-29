@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode, useState } from 'react';
+import { ReactNode, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import HeroSection from '../components/HeroSection';
 import WorkSection from '../components/WorkSection';
@@ -44,6 +44,19 @@ export default function Home() {
     setIsIntroComplete(true);
   };
 
+  useEffect(() => {
+    if (!isIntroComplete) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+      window.scrollTo(0, 0);
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isIntroComplete]);
+
   return (
     <main className="relative">
       {!isIntroComplete ? (
@@ -60,9 +73,7 @@ export default function Home() {
             <MotionSection>
               <AboutSection />
             </MotionSection>
-            <MotionSection>
-              <WorkSection />
-            </MotionSection>
+            <WorkSection />
             <MotionSection>
               <WritingSection />
             </MotionSection>

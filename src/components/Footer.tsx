@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="p-8 text-center text-sm text-text-primary relative z-[10] bg-white">
+    <footer className="p-8 text-center text-sm text-text-primary relative z-[10] bg-white pt-[100vh]">
       &copy; 2025 BYEON JEONG MIN. All rights reserved.
     </footer>
   );
