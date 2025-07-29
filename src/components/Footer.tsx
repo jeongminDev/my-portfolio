@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer className="p-8 text-center text-sm text-text-primary relative z-[10] bg-white">
-      &copy; {new Date().getFullYear()} BYEON JEONG MIN. All rights reserved.
+      &copy; 2025 BYEON JEONG MIN. All rights reserved.
     </footer>
   );
 };
