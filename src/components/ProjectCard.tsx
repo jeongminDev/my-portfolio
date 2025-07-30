@@ -3,7 +3,11 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { IoCloseCircleOutline } from 'react-icons/io5';
+import {
+  IoCloseCircleOutline,
+  IoArrowBack,
+  IoArrowForward,
+} from 'react-icons/io5';
 
 export interface ProjectCardProps {
   name: string;
@@ -45,16 +49,33 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedImage(null);
+    setCurrentImageIndex(0);
   };
 
   const openLightbox = (imageUrl: string) => setSelectedImage(imageUrl);
   const closeLightbox = () => setSelectedImage(null);
+
+  const handleImageNavigation = (direction: 'prev' | 'next') => {
+    if (!images) return;
+    const newIndex =
+      direction === 'prev' ? currentImageIndex - 1 : currentImageIndex + 1;
+    if (newIndex >= 0 && newIndex < images.length) {
+      setCurrentImageIndex(newIndex);
+      const imageElement = document.getElementById(`project-image-${newIndex}`);
+      imageElement?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'start',
+      });
+    }
+  };
 
   useEffect(() => {
     const body = document.body;
@@ -67,22 +88,6 @@ const ProjectCard = ({
       body.style.overflow = 'auto';
     };
   }, [isModalOpen, selectedImage]);
-
-  useEffect(() => {
-    const scrollContainer = scrollContainerRef.current;
-    if (!scrollContainer) return;
-
-    const handleWheel = (e: WheelEvent) => {
-      if (e.deltaY === 0) return;
-      e.preventDefault();
-      scrollContainer.scrollLeft += e.deltaY;
-    };
-
-    scrollContainer.addEventListener('wheel', handleWheel);
-    return () => {
-      scrollContainer.removeEventListener('wheel', handleWheel);
-    };
-  }, [isModalOpen]);
 
   const modalVariants = {
     hidden: { opacity: 0, scale: 0.9 },
@@ -130,7 +135,7 @@ const ProjectCard = ({
             onClick={closeModal}
           >
             <motion.div
-              className="bg-custom-bg rounded-lg shadow-xl p-8 pr-0 max-w-[85%] w-full text-text-primary cursor-auto"
+              className="bg-custom-bg rounded-lg shadow-xl p-8 max-w-[85%] w-full text-text-primary cursor-auto max-h-[90vh] overflow-y-auto"
               variants={modalVariants}
               initial="hidden"
               animate="visible"
@@ -155,21 +160,38 @@ const ProjectCard = ({
               <p className="text-sm text-text-primary">{date}</p>
 
               {images && (
-                <div
-                  ref={scrollContainerRef}
-                  className="flex gap-5 overflow-x-auto py-4 flex-nowrap"
-                >
-                  {images.map((image, index) => (
-                    <Image
-                      key={index}
-                      width={600}
-                      height={100}
-                      src={image}
-                      alt={`project image 0${index + 1}`}
-                      className="shadow-md rounded-lg flex-shrink-0 cursor-pointer"
-                      onClick={() => openLightbox(image)}
-                    />
-                  ))}
+                <div className="relative">
+                  <div
+                    ref={scrollContainerRef}
+                    className="flex gap-5 overflow-x-auto py-4 flex-nowrap"
+                  >
+                    {images.map((image, index) => (
+                      <Image
+                        id={`project-image-${index}`}
+                        key={index}
+                        width={600}
+                        height={100}
+                        src={image}
+                        alt={`project image 0${index + 1}`}
+                        className="shadow-md rounded-lg flex-shrink-0 cursor-pointer"
+                        onClick={() => openLightbox(image)}
+                      />
+                    ))}
+                  </div>
+                  <button
+                    onClick={() => handleImageNavigation('prev')}
+                    className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
+                    disabled={currentImageIndex === 0}
+                  >
+                    <IoArrowBack />
+                  </button>
+                  <button
+                    onClick={() => handleImageNavigation('next')}
+                    className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
+                    disabled={currentImageIndex === images.length - 1}
+                  >
+                    <IoArrowForward />
+                  </button>
                 </div>
               )}
 
