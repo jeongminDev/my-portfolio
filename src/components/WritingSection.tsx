@@ -19,7 +19,8 @@ const WritingSection = () => {
       id="writing"
       className="mb-16"
       initial="hidden"
-      animate="visible"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.3 }}
       variants={containerVariants}
     >
       <h2 className="text-2xl font-bold mb-8">Writing</h2>

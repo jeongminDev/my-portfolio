@@ -4,7 +4,6 @@ import { ReactNode, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import HeroSection from '../components/HeroSection';
 import WorkSection from '../components/WorkSection';
-import WritingSection from '../components/WritingSection';
 import AboutSection from '../components/AboutSection';
 import IntroAnimation from '../components/IntroAnimation';
 
@@ -12,7 +11,7 @@ type MotionSectionProps = {
   children: ReactNode;
 };
 
-const MotionSection = ({ children }: MotionSectionProps) => {
+export const MotionSection = ({ children }: MotionSectionProps) => {
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -29,7 +28,7 @@ const MotionSection = ({ children }: MotionSectionProps) => {
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: false, amount: 0.3 }}
       variants={sectionVariants}
     >
       {children}
@@ -74,9 +73,6 @@ export default function Home() {
               <AboutSection />
             </MotionSection>
             <WorkSection />
-            <MotionSection>
-              <WritingSection />
-            </MotionSection>
           </div>
         </>
       )}
