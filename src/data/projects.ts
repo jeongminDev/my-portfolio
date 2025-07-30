@@ -25,10 +25,13 @@ export const projects: ProjectCardProps[] = [
       collaboration: ['Figma', 'GitHub', 'Vercel'],
       testing: ['Vitest'],
     },
-    role: ' - 게임방 UI/UX 디자인 및 화면 설계 (Figma 기반) - fabric.js를 활용한 실시간 드로잉 기능 개발- Socket.IO를 활용한 실시간 그림 동기화 및 멀티 사용자 통신 구조 설계- 게임 아이템 효과 구현 및 사용자 반응 기반 애니메이션 적용 (폭탄, 반전 등)- PR 기반 CI/CD 파이프라인 구성 및 Vercel 자동 배포 구현',
-    result: `
-    - 3개월 MVP 구축 및 배포 완료(https://www.doodleplay.xyz)
-    \n Next.js SSR 환경에서 상태 관리 및 렌더링 이슈 해결 경험
+    role: `- 게임방 UI/UX 디자인 및 화면 설계 (Figma 기반)
+    - fabric.js를 활용한 실시간 드로잉 기능 개발
+    - Socket.IO를 활용한 실시간 그림 동기화 및 멀티 사용자 통신 구조 설계- 게임 아이템 효과 구현 및 사용자 반응 기반 애니메이션 적용 (폭탄, 반전 등)
+    - PR 기반 CI/CD 파이프라인 구성 및 Vercel 자동 배포 구현
+    `,
+    result: `- 3개월 MVP 구축 및 배포 완료(https://www.doodleplay.xyz)
+    - Next.js SSR 환경에서 상태 관리 및 렌더링 이슈 해결 경험
     - GitHub PR 기반 협업 프로세스 도입 및 코드 리뷰 문화 정착
     - 사용자 피드백 기반 UI/UX 개선 → 그림판/아이템 사용성 개선
     `,

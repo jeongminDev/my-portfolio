@@ -309,14 +309,14 @@ const ProjectCard = ({
               {role && (
                 <div className="text-sm text-text-primary mt-4">
                   <strong className="block mb-1">주요 역할</strong>
-                  <p>{role}</p>
+                  <p className="whitespace-pre-line">{role}</p>
                 </div>
               )}
 
               {result && (
                 <div className="text-sm text-text-primary mt-4">
                   <strong className="block mb-1">성과 및 학습</strong>
-                  <p>{result}</p>
+                  <p className="whitespace-pre-line">{result}</p>
                 </div>
               )}
             </motion.div>
