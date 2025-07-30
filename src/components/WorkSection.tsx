@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import ProjectCard from './ProjectCard';
 import WritingSection from './WritingSection';
 import { MotionSection } from '@/app/page';
+import { projects } from '@/data/projects';
 
 const WorkSection = () => {
   const [activeSection, setActiveSection] = useState<'project' | 'interview'>(
@@ -70,56 +71,9 @@ const WorkSection = () => {
           <div id="project" ref={projectRef} className="pt-10">
             <MotionSection>
               <ul className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-x-[2rem] gap-y-[10rem]">
-                <ProjectCard
-                  thumbnail="/projectImage/doodleplay.png"
-                  images={[
-                    '/projectImage/doodleplay.png',
-                    '/projectImage/doodleplay_02.png',
-                    '/projectImage/doodleplay_03.png',
-                  ]}
-                  name="Doodle Play"
-                  date="2024. 10 ~ 2025. 01"
-                />
-                <ProjectCard
-                  thumbnail="/projectImage/trainingDiary_bg.png"
-                  images={[
-                    '/projectImage/trainingDiary.png',
-                    '/projectImage/trainingDiary_02.png',
-                    '/projectImage/trainingDiary_03.png',
-                  ]}
-                  name="Training Diary(트.다)"
-                  date="2024. 06 ~ 2024. 08"
-                />
-                <ProjectCard
-                  thumbnail="/projectImage/wheeltalk.png"
-                  images={[
-                    '/projectImage/wheeltalk.png',
-                    '/projectImage/wheeltalk_02.png',
-                    '/projectImage/wheeltalk_03.png',
-                  ]}
-                  name="wheeltalk(바퀴달린 수다)"
-                  date="2024. 05 ~ 2024. 07"
-                />
-                <ProjectCard
-                  thumbnail="/projectImage/teamap_co_kr.png"
-                  images={[
-                    '/projectImage/teamap_co_kr.png',
-                    '/projectImage/teamap_co_kr_2.png',
-                    '/projectImage/teamap_co_kr_3.png',
-                  ]}
-                  name="APMETALABS 회사 홈페이지"
-                  date="2023. 01 ~ 2023. 05"
-                />
-                <ProjectCard
-                  thumbnail="/projectImage/luvlu_01.png"
-                  images={[
-                    '/projectImage/luvlu_01.png',
-                    '/projectImage/luvlu_02.png',
-                    '/projectImage/luvlu_03.png',
-                  ]}
-                  name="루브루숭의(반응형) 분양 홈페이지"
-                  date="2022. 07 ~ 2023. 01"
-                />
+                {projects.map((project, index) => (
+                  <ProjectCard key={index} {...project} />
+                ))}
               </ul>
             </MotionSection>
           </div>

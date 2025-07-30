@@ -3,25 +3,45 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import { IoCloseCircleOutline } from 'react-icons/io5';
 
-interface ProjectCardProps {
-  thumbnail?: string;
-  images?: string[];
+export interface ProjectCardProps {
   name: string;
   date: string;
+  thumbnail?: string;
+  images?: string[];
   notionUrl?: string;
   githubUrl?: string;
   webUrl?: string;
+  figmaUrl?: string;
+  summary?: string;
+  techStack?: string[];
+  techStackByCategory?: {
+    frontend: string[];
+    backend: string[];
+    styling: string[];
+    testing: string[];
+    collaboration: string[];
+    [key: string]: string[];
+  };
+  role?: string;
+  result?: string;
 }
 
 const ProjectCard = ({
-  thumbnail,
-  images,
   name,
   date,
+  thumbnail,
+  images,
   notionUrl,
   githubUrl,
   webUrl,
+  figmaUrl,
+  summary,
+  techStack,
+  techStackByCategory,
+  role,
+  result,
 }: ProjectCardProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -30,7 +50,7 @@ const ProjectCard = ({
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => {
     setIsModalOpen(false);
-    setSelectedImage(null); // Ensure lightbox is also closed
+    setSelectedImage(null);
   };
 
   const openLightbox = (imageUrl: string) => setSelectedImage(imageUrl);
@@ -117,66 +137,188 @@ const ProjectCard = ({
               exit="exit"
               onClick={(e) => e.stopPropagation()}
             >
-              <h2 className="text-2xl font-bold mb-4">요약 정보</h2>
+              <div className="flex justify-between items-center pr-8">
+                <h2 className="text-2xl font-bold mb-4">{`${
+                  images && images?.length >= 1 ? 'Project 정보' : '요약 정보'
+                }`}</h2>
+                {thumbnail && (
+                  <button
+                    onClick={closeModal}
+                    className="transition-colors text-6xl"
+                  >
+                    <IoCloseCircleOutline />
+                  </button>
+                )}
+              </div>
+
               <strong className="text-xl font-semibold mb-4">{name}</strong>
-              <p className="text-sm text-text-primary mb-6">{date}</p>
+              <p className="text-sm text-text-primary">{date}</p>
 
-              <div
-                ref={scrollContainerRef}
-                className="flex gap-5 overflow-x-auto py-4 flex-nowrap"
-              >
-                {images?.map((image, index) => (
-                  <Image
-                    key={index}
-                    width={600}
-                    height={100}
-                    src={image}
-                    alt={`project image 0${index + 1}`}
-                    className="shadow-md rounded-lg flex-shrink-0 cursor-pointer"
-                    onClick={() => openLightbox(image)}
-                  />
+              {images && (
+                <div
+                  ref={scrollContainerRef}
+                  className="flex gap-5 overflow-x-auto py-4 flex-nowrap"
+                >
+                  {images.map((image, index) => (
+                    <Image
+                      key={index}
+                      width={600}
+                      height={100}
+                      src={image}
+                      alt={`project image 0${index + 1}`}
+                      className="shadow-md rounded-lg flex-shrink-0 cursor-pointer"
+                      onClick={() => openLightbox(image)}
+                    />
+                  ))}
+                </div>
+              )}
+
+              <div className="mt-4 flex gap-x-4 justify-left items-center">
+                {notionUrl &&
+                  (thumbnail && thumbnail?.length > 0 ? (
+                    <a
+                      href={notionUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block hover:text-accent-pink transition-colors"
+                    >
+                      Notion
+                    </a>
+                  ) : (
+                    <a
+                      href={notionUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block hover:text-accent-pink transition-colors"
+                    >
+                      # Notion
+                    </a>
+                  ))}
+                {githubUrl &&
+                  (thumbnail && thumbnail?.length > 0 ? (
+                    <a
+                      href={githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block hover:text-accent-pink transition-colors"
+                    >
+                      GitHub
+                    </a>
+                  ) : (
+                    <a
+                      href={githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block hover:text-accent-pink transition-colors"
+                    >
+                      # GitHub
+                    </a>
+                  ))}
+                {webUrl &&
+                  (thumbnail && thumbnail.length > 0 ? (
+                    <a
+                      href={webUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block hover:text-accent-pink transition-colors"
+                    >
+                      Web
+                    </a>
+                  ) : (
+                    <a
+                      href={webUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block hover:text-accent-pink transition-colors"
+                    >
+                      # Web
+                    </a>
+                  ))}
+                {figmaUrl &&
+                  (thumbnail && thumbnail.length > 0 ? (
+                    <a
+                      href={figmaUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block hover:text-accent-pink transition-colors"
+                    >
+                      figma
+                    </a>
+                  ) : (
+                    <a
+                      href={figmaUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block hover:text-accent-pink transition-colors"
+                    >
+                      # figma
+                    </a>
+                  ))}
+              </div>
+
+              {!thumbnail && (
+                <div className="text-right pr-8">
+                  <button
+                    onClick={closeModal}
+                    className="mt-8 px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 transition-colors"
+                  >
+                    닫기
+                  </button>
+                </div>
+              )}
+
+              {summary && (
+                <div className="text-sm text-text-primary mt-4">
+                  <strong className="block mb-1">기획 배경</strong>
+                  <p>{summary}</p>
+                </div>
+              )}
+
+              {techStack && (
+                <div className="text-sm text-text-primary mt-4">
+                  <strong className="block mb-1">기술 스택</strong>
+                  <p>{techStack.join(', ')}</p>
+                </div>
+              )}
+
+              {techStackByCategory && (
+                <div className="text-sm text-text-primary mt-4">
+                  <strong className="block mb-1">기술 스택</strong>
+                </div>
+              )}
+
+              {techStackByCategory &&
+                Object.entries(techStackByCategory).map(([category, tools]) => (
+                  <div key={category} className="mb-4">
+                    <h4 className="text-sm font-semibold capitalize">
+                      {category}
+                    </h4>
+                    <ul className="flex flex-wrap gap-2 text-sm text-gray-700">
+                      {tools.map((tool) => (
+                        <li
+                          key={tool}
+                          className="bg-gray-100 px-2 py-1 rounded shadow-sm text-xs"
+                        >
+                          {tool}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 ))}
-              </div>
 
-              <div className="space-y-4 mt-4">
-                {notionUrl && (
-                  <a
-                    href={notionUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block hover:text-accent-pink transition-colors"
-                  >
-                    Notion
-                  </a>
-                )}
-                {githubUrl && (
-                  <a
-                    href={githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block hover:text-accent-pink transition-colors"
-                  >
-                    GitHub
-                  </a>
-                )}
-                {webUrl && (
-                  <a
-                    href={webUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block hover:text-accent-pink transition-colors"
-                  >
-                    Web
-                  </a>
-                )}
-              </div>
+              {role && (
+                <div className="text-sm text-text-primary mt-4">
+                  <strong className="block mb-1">주요 역할</strong>
+                  <p>{role}</p>
+                </div>
+              )}
 
-              <button
-                onClick={closeModal}
-                className="mt-8 px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 transition-colors"
-              >
-                닫기
-              </button>
+              {result && (
+                <div className="text-sm text-text-primary mt-4">
+                  <strong className="block mb-1">성과 및 학습</strong>
+                  <p>{result}</p>
+                </div>
+              )}
             </motion.div>
           </motion.div>
         )}
