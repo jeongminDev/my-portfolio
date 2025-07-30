@@ -144,6 +144,7 @@ const HeroSection = () => {
                       notionUrl="https://jm-front.notion.site/Doodle-Play-1c2fcc0bc00b806085fae7886a9a2b63?pvs=4"
                       githubUrl="https://github.com/DoodlePlay/Frontend"
                       webUrl="https://www.doodleplay.xyz/"
+                      figmaUrl="https://www.figma.com/design/1ZCji1TU18PFMzwbLtL32j/Two-Meet's-team-library?node-id=2317-191&t=3ET9eArK5Bbqwqah-1"
                     />
                     <ProjectCard
                       name="Training Diary(트.다)"

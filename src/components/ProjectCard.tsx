@@ -195,7 +195,7 @@ const ProjectCard = ({
                 </div>
               )}
 
-              <div className="mt-4 flex gap-x-4 justify-left items-center">
+              <div className="mt-4 grid grid-cols-[1fr_1fr_1fr] items-center">
                 {notionUrl &&
                   (thumbnail && thumbnail?.length > 0 ? (
                     <a
@@ -264,7 +264,7 @@ const ProjectCard = ({
                       rel="noopener noreferrer"
                       className="block hover:text-accent-pink transition-colors"
                     >
-                      figma
+                      Figma
                     </a>
                   ) : (
                     <a
@@ -273,7 +273,7 @@ const ProjectCard = ({
                       rel="noopener noreferrer"
                       className="block hover:text-accent-pink transition-colors"
                     >
-                      # figma
+                      # Figma
                     </a>
                   ))}
               </div>
