@@ -1,12 +1,5 @@
 import StyledListItem from './StyledListItem';
-import {
-  FaJs,
-  FaReact,
-  FaFigma,
-  FaGithub,
-  FaSlack,
-  FaJira,
-} from 'react-icons/fa';
+import { FaJs, FaReact, FaFigma, FaGithub, FaSlack } from 'react-icons/fa';
 import {
   SiTypescript,
   SiNextdotjs,
@@ -19,9 +12,10 @@ import {
   SiAdobeillustrator,
   SiAdobephotoshop,
   SiNotion,
+  SiMockserviceworker,
+  SiSketch,
 } from 'react-icons/si';
 import { TbBrandReactNative } from 'react-icons/tb';
-import { LuServerCog } from 'react-icons/lu';
 import { BsClipboardCheck } from 'react-icons/bs';
 
 const AboutSection = () => {
@@ -29,7 +23,7 @@ const AboutSection = () => {
     <section className="py-16 text-black">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12">About Me</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-[1.1rem]">
           <div>
             <h3 className="text-2xl font-bold mb-4">My Info</h3>
             <ul>
@@ -79,61 +73,65 @@ const AboutSection = () => {
           </div>
           <div>
             <h3 className="text-2xl font-bold mb-4">Skills & Tools</h3>
-            <ul className="flex flex-wrap gap-4">
+            <ul className="flex flex-wrap gap-4 cursor-default">
               <li>
                 <ul>
                   <li className="flex items-center gap-2">
-                    <FaJs /> JavaScript
+                    <FaJs className="text-[#F7DF1E]" /> JavaScript
                   </li>
                   <li className="flex items-center gap-2">
-                    <FaReact /> React
+                    <FaReact className="text-[#61DAFB]" /> React
                   </li>
                   <li className="flex items-center gap-2">
-                    <SiTypescript /> TypeScript
+                    <SiTypescript className="text-[#3178C6]" /> TypeScript
                   </li>
                   <li className="flex items-center gap-2">
-                    <SiNextdotjs /> NextJs
+                    <SiNextdotjs className="text-[#000000]" /> NextJs
                   </li>
                   <li className="flex items-center gap-2">
-                    <TbBrandReactNative /> ReactNative
+                    <TbBrandReactNative className="text-[#61DAFB]" />{' '}
+                    ReactNative
                   </li>
                 </ul>
               </li>
               <li>
                 <ul>
                   <li className="flex items-center gap-2">
-                    <SiStyledcomponents /> styled-components
+                    <SiStyledcomponents className="text-[#DB7093]" />{' '}
+                    styled-components
                   </li>
                   <li className="flex items-center gap-2">
-                    <SiFramer /> framer-motion
+                    <SiFramer className="text-[#0055FF]" /> framer-motion
                   </li>
                   <li className="flex items-center gap-2">
-                    <SiTailwindcss /> Tailwind CSS
+                    <SiTailwindcss className="text-[#06B6D4]" /> Tailwind CSS
                   </li>
                   <li className="flex items-center gap-2">
                     <BsClipboardCheck /> Zustand
                   </li>
                   <li className="flex items-center gap-2">
-                    <SiAxios /> Axios
+                    <SiAxios className="text-[#5A29E4]" /> Axios
                   </li>
                   <li className="flex items-center gap-2">
-                    <SiJest /> Jest
+                    <SiJest className="text-[#C21325]" /> Jest
                   </li>
                   <li className="flex items-center gap-2">
-                    <SiTestinglibrary /> React Testing Library
+                    <SiTestinglibrary className="text-[#E33332]" /> React
+                    Testing Library
                   </li>
                   <li className="flex items-center gap-2">
-                    <LuServerCog /> Mock Server Work
+                    <SiMockserviceworker className="text-[#FF6A33]" /> Mock
+                    Server Work
                   </li>
                 </ul>
               </li>
               <li>
                 <ul>
                   <li className="flex items-center gap-2">
-                    <FaFigma /> Figma
+                    <FaFigma className="text-[#F24E1E]" /> Figma
                   </li>
                   <li className="flex items-center gap-2">
-                    <FaJira /> Jira
+                    <SiSketch className="text-[#F7B500]" /> Sketch
                   </li>
                   <li className="flex items-center gap-2">
                     <SiAdobeillustrator /> Illustrator
@@ -142,13 +140,13 @@ const AboutSection = () => {
                     <SiAdobephotoshop /> Photoshop
                   </li>
                   <li className="flex items-center gap-2">
-                    <FaGithub /> github
+                    <FaGithub className="text-[#181717]" /> github
                   </li>
                   <li className="flex items-center gap-2">
-                    <SiNotion /> Notion
+                    <SiNotion className="text-[#000000]" /> Notion
                   </li>
                   <li className="flex items-center gap-2">
-                    <FaSlack /> slack
+                    <FaSlack className="text-[#4A154B]" /> slack
                   </li>
                 </ul>
               </li>
