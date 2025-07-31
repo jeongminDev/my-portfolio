@@ -194,7 +194,6 @@ const ProjectCard = ({
                   </button>
                 </div>
               )}
-              {/* TODO : flex gap-x-4 justify-left <- 이거는 프로젝트 디테일에서 사용해야되는 div */}
               <div
                 className={`${
                   thumbnail
