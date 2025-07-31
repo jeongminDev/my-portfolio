@@ -284,7 +284,7 @@ const ProjectCard = ({
               </div>
 
               {!thumbnail && (
-                <div className="text-right pr-8">
+                <div className="text-right">
                   <button
                     onClick={closeModal}
                     className="mt-8 px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 transition-colors"
@@ -304,7 +304,16 @@ const ProjectCard = ({
               {techStack && (
                 <div className="text-sm text-text-primary mt-4">
                   <strong className="block mb-1">기술 스택</strong>
-                  <p>{techStack.join(', ')}</p>
+                  <ul className="flex flex-wrap gap-2 text-sm text-text-primary">
+                    {techStack.map((stack, index) => (
+                      <li
+                        key={index}
+                        className="bg-gray-100 px-2 py-1 rounded shadow-sm text-xs"
+                      >
+                        {stack}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               )}
 
@@ -315,23 +324,27 @@ const ProjectCard = ({
               )}
 
               {techStackByCategory &&
-                Object.entries(techStackByCategory).map(([category, tools]) => (
-                  <div key={category} className="mb-4">
-                    <h4 className="text-sm font-semibold capitalize">
-                      {category}
-                    </h4>
-                    <ul className="flex flex-wrap gap-2 text-sm text-gray-700">
-                      {tools.map((tool) => (
-                        <li
-                          key={tool}
-                          className="bg-gray-100 px-2 py-1 rounded shadow-sm text-xs"
-                        >
-                          {tool}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+                Object.entries(techStackByCategory).map(
+                  ([category, tools]) =>
+                    tools &&
+                    tools.length > 0 && (
+                      <div key={category} className="mb-4">
+                        <h4 className="text-sm font-semibold capitalize">
+                          {category}
+                        </h4>
+                        <ul className="flex flex-wrap gap-2 text-sm text-text-primary">
+                          {tools.map((tool) => (
+                            <li
+                              key={tool}
+                              className="bg-gray-100 px-2 py-1 rounded shadow-sm text-xs"
+                            >
+                              {tool}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ),
+                )}
 
               {role && (
                 <div className="text-sm text-text-primary mt-4">
