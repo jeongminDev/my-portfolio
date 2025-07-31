@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   description: '프론트엔드 개발자 변정민의 포트폴리오입니다.',
 };
 
+// TODO : font 고민
+
 export default function RootLayout({
   children,
 }: Readonly<{
