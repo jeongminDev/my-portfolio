@@ -194,8 +194,14 @@ const ProjectCard = ({
                   </button>
                 </div>
               )}
-
-              <div className="mt-4 grid grid-cols-[1fr_1fr_1fr] items-center">
+              {/* TODO : flex gap-x-4 justify-left <- 이거는 프로젝트 디테일에서 사용해야되는 div */}
+              <div
+                className={`${
+                  thumbnail
+                    ? 'flex gap-x-4 justify-left'
+                    : 'grid grid-cols-[1fr_1fr_1fr]'
+                } mt-4 items-center`}
+              >
                 {notionUrl &&
                   (thumbnail && thumbnail?.length > 0 ? (
                     <a
