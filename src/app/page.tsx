@@ -1,40 +1,12 @@
 'use client';
 
-import { ReactNode, useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+
 import HeroSection from '../components/HeroSection';
 import WorkSection from '../components/WorkSection';
 import AboutSection from '../components/AboutSection';
 import IntroAnimation from '../components/IntroAnimation';
-
-type MotionSectionProps = {
-  children: ReactNode;
-};
-
-export const MotionSection = ({ children }: MotionSectionProps) => {
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: 'easeOut' as const,
-      },
-    },
-  };
-
-  return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.3 }}
-      variants={sectionVariants}
-    >
-      {children}
-    </motion.div>
-  );
-};
+import MotionSection from '@/components/MotionSection';
 
 export default function Home() {
   const [isIntroComplete, setIsIntroComplete] = useState(false);

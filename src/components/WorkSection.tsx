@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from 'react';
 import ProjectCard from './ProjectCard';
 import WritingSection from './WritingSection';
-import { MotionSection } from '@/app/page';
 import { projects } from '@/data/projects';
+import MotionSection from './MotionSection';
 
 const WorkSection = () => {
   const [activeSection, setActiveSection] = useState<'project' | 'interview'>(
