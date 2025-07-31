@@ -77,8 +77,6 @@ const WorkSection = () => {
               </ul>
             </MotionSection>
           </div>
-          {/* TODO : 개발 기술서 및 간략한 설명이라도 기입 */}
-          {/* TODO : 옵저브가 인터뷰 ref가 화면에 보이는 순간 부터 변경하고 있음. 그게 아니라 프로젝트 마지막 항목이 화면에서 안보인 후 인터뷰로 변경 */}
 
           {/* ✅ Interview Section */}
           <div id="interview" ref={interviewRef} className="pt-20 border-t-2">

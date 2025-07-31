@@ -8,6 +8,9 @@ import {
   IoArrowBack,
   IoArrowForward,
 } from 'react-icons/io5';
+import { SiNotion } from 'react-icons/si';
+import { FaFigma, FaGithub } from 'react-icons/fa';
+import { MdOutlineWeb } from 'react-icons/md';
 
 export interface ProjectCardProps {
   name: string;
@@ -143,7 +146,11 @@ const ProjectCard = ({
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex justify-between items-center pr-8">
-                <h2 className="text-2xl font-bold mb-4">{`${
+                <h2
+                  className={`${
+                    thumbnail ? 'text-3xl' : 'text-xl'
+                  } font-bold mb-4`}
+                >{`${
                   images && images?.length >= 1 ? 'Project 정보' : '요약 정보'
                 }`}</h2>
                 {thumbnail && (
@@ -156,8 +163,20 @@ const ProjectCard = ({
                 )}
               </div>
 
-              <strong className="text-xl font-semibold mb-4">{name}</strong>
-              <p className="text-sm text-text-primary">{date}</p>
+              <strong
+                className={`${
+                  thumbnail ? 'text-2xl' : 'text-base'
+                } font-semibold mb-4`}
+              >
+                {name}
+              </strong>
+              <p
+                className={`${
+                  thumbnail ? 'text-base' : 'text-sm'
+                } text-text-primary`}
+              >
+                {date}
+              </p>
 
               {images && (
                 <div className="relative">
@@ -207,9 +226,9 @@ const ProjectCard = ({
                       href={notionUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block hover:text-accent-pink transition-colors"
+                      className="flex justify-center items-center gap-x-1 hover:text-white hover:bg-gray-700 transition-colors px-4 py-2 border-[1px] shadow-md border-gray-200 bg-gray-100 rounded-md"
                     >
-                      Notion
+                      <SiNotion /> Notion
                     </a>
                   ) : (
                     <a
@@ -227,9 +246,9 @@ const ProjectCard = ({
                       href={githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block hover:text-accent-pink transition-colors"
+                      className="flex justify-center items-center gap-x-1 hover:text-white hover:bg-gray-700 transition-colors px-4 py-2 border-[1px] shadow-md border-gray-200 bg-gray-100 rounded-md"
                     >
-                      GitHub
+                      <FaGithub /> GitHub
                     </a>
                   ) : (
                     <a
@@ -247,9 +266,9 @@ const ProjectCard = ({
                       href={webUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block hover:text-accent-pink transition-colors"
+                      className="flex justify-center items-center gap-x-1 hover:text-white hover:bg-gray-700 transition-colors px-4 py-2 border-[1px] shadow-md border-gray-200 bg-gray-100 rounded-md"
                     >
-                      Web
+                      <MdOutlineWeb /> Web
                     </a>
                   ) : (
                     <a
@@ -267,9 +286,9 @@ const ProjectCard = ({
                       href={figmaUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block hover:text-accent-pink transition-colors"
+                      className="flex justify-center items-center gap-x-1 hover:text-white hover:bg-gray-700 transition-colors px-4 py-2 border-[1px] shadow-md border-gray-200 bg-gray-100 rounded-md"
                     >
-                      Figma
+                      <FaFigma /> Figma
                     </a>
                   ) : (
                     <a
@@ -296,14 +315,14 @@ const ProjectCard = ({
 
               {summary && (
                 <div className="text-sm text-text-primary mt-4">
-                  <strong className="block mb-1">기획 배경</strong>
+                  <strong className="block mb-1 text-base">💡 기획 배경</strong>
                   <p>{summary}</p>
                 </div>
               )}
 
               {techStack && (
                 <div className="text-sm text-text-primary mt-4">
-                  <strong className="block mb-1">기술 스택</strong>
+                  <strong className="block mb-1 text-base">🛠️ 기술 스택</strong>
                   <ul className="flex flex-wrap gap-2 text-sm text-text-primary">
                     {techStack.map((stack, index) => (
                       <li
@@ -319,7 +338,7 @@ const ProjectCard = ({
 
               {techStackByCategory && (
                 <div className="text-sm text-text-primary mt-4">
-                  <strong className="block mb-1">기술 스택</strong>
+                  <strong className="block mb-1 text-base">🛠️ 기술 스택</strong>
                 </div>
               )}
 
@@ -330,7 +349,7 @@ const ProjectCard = ({
                     tools.length > 0 && (
                       <div key={category} className="mb-4">
                         <h4 className="text-sm font-semibold capitalize">
-                          {category}
+                          - {category}
                         </h4>
                         <ul className="flex flex-wrap gap-2 text-sm text-text-primary">
                           {tools.map((tool) => (
@@ -343,19 +362,21 @@ const ProjectCard = ({
                           ))}
                         </ul>
                       </div>
-                    ),
+                    )
                 )}
 
               {role && (
                 <div className="text-sm text-text-primary mt-4">
-                  <strong className="block mb-1">주요 역할</strong>
+                  <strong className="block mb-1 text-base">🧑‍💻 주요 역할</strong>
                   <p className="whitespace-pre-line">{role}</p>
                 </div>
               )}
 
               {result && (
                 <div className="text-sm text-text-primary mt-4">
-                  <strong className="block mb-1">성과 및 학습</strong>
+                  <strong className="block mb-1 text-base">
+                    ✨ 성과 및 학습
+                  </strong>
                   <p className="whitespace-pre-line">{result}</p>
                 </div>
               )}

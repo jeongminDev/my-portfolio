@@ -14,7 +14,7 @@ const StyledListItem: React.FC<StyledListItemProps> = ({ children }) => {
       whileTap={{ scale: 0.95 }}
     >
       <motion.span
-        className="flex-shrink-0 w-5 h-5 mr-3 mt-1 bg-blue-500 rounded-sm"
+        className="flex-shrink-0 w-5 h-5 mr-3 mt-1 bg-gray-500 rounded-md"
         variants={{
           initial: { rotate: 0, scale: 1 },
           hover: { rotate: 180, scale: 1.2 },
