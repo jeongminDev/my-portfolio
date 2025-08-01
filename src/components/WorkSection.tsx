@@ -43,8 +43,8 @@ const WorkSection = () => {
   };
 
   return (
-    <section id="work" className="w-full py-16">
-      <div className="grid grid-cols-[1fr_3fr] gap-14 p-10">
+    <section id="work" className="w-full pt-16">
+      <div className="grid grid-cols-[1fr_3fr] gap-14 pt-10 px-10">
         <div className="sticky top-10 h-fit self-start">
           <nav className="flex flex-col gap-3 pt-10">
             <button
@@ -67,7 +67,7 @@ const WorkSection = () => {
             </button>
           </nav>
         </div>
-        <div className="flex flex-col gap-60 pb-20">
+        <div className="flex flex-col gap-60">
           <div id="project" ref={projectRef} className="pt-10">
             <MotionSection>
               <ul className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-x-[2rem] gap-y-[10rem]">
