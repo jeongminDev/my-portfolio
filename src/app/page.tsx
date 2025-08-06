@@ -36,7 +36,7 @@ export default function Home() {
         <>
           <HeroSection />
 
-          <div className="p-8 md:p-16 relative z-[20] mt-[90vh] bg-white rounded-t-2xl">
+          <div className="p-8 md:p-16 relative z-[20] lg:mt-[90vh] bg-white rounded-t-2xl">
             <div className="absolute left-1/2 top-5 -translate-x-1/2">
               <div className="h-1 w-14 rounded-full bg-text-primary/15"></div>
             </div>

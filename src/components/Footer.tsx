@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="p-8 text-center text-sm text-text-primary relative z-[10] bg-gradient-to-br from-gradient-start to-gradient-end">
+    <footer className="p-8 text-center text-sm text-text-primary relative z-[10]">
       &copy; 2025 BYEON JEONG MIN. All rights reserved.
     </footer>
   );
