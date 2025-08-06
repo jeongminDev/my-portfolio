@@ -9,6 +9,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        '7': 'repeat(7, clamp(120px, 18vw, 160px))',
+      },
+      gridTemplateRows: {
+        '3': 'repeat(3, clamp(120px, 18vw, 160px))',
+      },
+      screens: {
+        '3xl': '1800px',
+      },
       fontFamily: {
         sans: ['var(--font-inter)'],
       },

@@ -50,13 +50,13 @@ const HeroSection = () => {
           initial="hidden"
           animate="visible"
         >
-          <div className="mb-4 relative text-center">
+          <div className="hidden mb-4 relative text-center 3xl:block">
             <h1 className="block text-9xl font-bold text-white stroke-0 opacity-70">
               Front-End
             </h1>
-            <p className="w-full text-4xl font-medium absolute top-1/2 -translate-y-1/2 text-gray-600 opacity-70 z-10">
+            <p className="w-full text-[2rem] font-medium absolute top-1/2 text-gray-600 opacity-70 z-10 leading-none">
               프론트엔드 개발자{' '}
-              <span className="text-5xl font-bold">변정민</span> 입니다.
+              <span className="text-[2.5rem] font-bold">변정민</span> 입니다.
             </p>
           </div>
           <div

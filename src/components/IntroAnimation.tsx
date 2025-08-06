@@ -18,10 +18,13 @@ export default function IntroAnimation({
         transition={{ duration: 2 }}
         onAnimationComplete={onAnimationComplete}
       >
-        <h1 className="block text-9xl font-bold text-white mb-8">Front-End</h1>
-        <p className="text-6xl font-medium">
+        <h1 className="block text-6xl md:text-9xl font-bold text-white mb-2 md:mb-8">
+          Front-End
+        </h1>
+        <p className="text-2xl md:text-6xl font-medium">
           프론트엔드 개발자{' '}
-          <strong className="text-7xl font-bold">변정민</strong> 입니다.
+          <strong className="text-3xl md:text-7xl font-bold">변정민</strong>{' '}
+          입니다.
         </p>
       </motion.div>
     </div>

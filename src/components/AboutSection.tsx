@@ -23,7 +23,7 @@ const AboutSection = () => {
     <section className="py-16 text-black">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12">About Me</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-[1.1rem]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-base">
           <div>
             <h3 className="text-2xl font-bold mb-4">My Info</h3>
             <ul>
