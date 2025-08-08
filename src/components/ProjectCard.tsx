@@ -145,7 +145,7 @@ const ProjectCard = ({
               exit="exit"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex justify-between items-center pr-8">
+              <div className="flex justify-between items-center md:pr-8">
                 <h2
                   className={`${
                     thumbnail ? 'text-3xl' : 'text-xl'
