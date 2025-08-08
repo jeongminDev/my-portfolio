@@ -44,8 +44,8 @@ const WorkSection = () => {
 
   return (
     <section id="work" className="w-full pt-16">
-      <div className="grid grid-cols-[1fr_3fr] gap-14 pt-10 px-10">
-        <div className="sticky top-10 h-fit self-start">
+      <div className="flex lg:grid lg:grid-cols-[1fr_3fr] gap-14 pt-10 px-4 lg:px-10">
+        <div className="hidden lg:block sticky top-10 h-fit self-start">
           <nav className="flex flex-col gap-3 pt-10">
             <button
               onClick={() => handleScrollTo('project')}
@@ -67,10 +67,11 @@ const WorkSection = () => {
             </button>
           </nav>
         </div>
-        <div className="flex flex-col gap-60">
-          <div id="project" ref={projectRef} className="pt-10">
+        <div className="flex flex-col gap-20 lg:gap-60 w-full">
+          <div id="project" ref={projectRef} className="py-10">
             <MotionSection>
-              <ul className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-x-[2rem] gap-y-[10rem]">
+              <h2 className="text-4xl font-bold mb-8 lg:hidden">Projects</h2>
+              <ul className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-x-[2rem] gap-y-[3rem] lg:gap-y-[10rem]">
                 {projects.map((project, index) => (
                   <ProjectCard key={index} {...project} />
                 ))}
@@ -79,8 +80,11 @@ const WorkSection = () => {
           </div>
 
           {/* ✅ Interview Section */}
-          <div id="interview" ref={interviewRef} className="pt-20 border-t-2">
-            <WritingSection />
+          <div id="interview" ref={interviewRef} className="py-10 border-t-2">
+            <h2 className="text-4xl font-bold mb-8 lg:hidden">Interview</h2>
+            <MotionSection>
+              <WritingSection />
+            </MotionSection>
           </div>
         </div>
       </div>

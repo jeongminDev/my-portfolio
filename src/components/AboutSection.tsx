@@ -73,7 +73,7 @@ const AboutSection = () => {
           </div>
           <div>
             <h3 className="text-2xl font-bold mb-4">Skills & Tools</h3>
-            <ul className="flex flex-wrap gap-4 cursor-default">
+            <ul className="flex flex-wrap gap-x-4 cursor-default">
               <li>
                 <ul>
                   <li className="flex items-center gap-2">
