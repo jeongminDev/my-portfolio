@@ -104,18 +104,27 @@ const WritingSection = () => {
             Q. 개발 중 가장 보람 있었던 순간은?
           </h3>
           <p className="text-base text-black">
-            Training Diary를 배포한 후 한 사용자가 “이 앱 덕분에 운동 루틴을
-            유지할 수 있었다”는 DM을 보내주셨을 때 정말 큰 보람을 느꼈습니다.
-            단순히 기능 구현이 아니라,{' '}
+            Doodle Play 프로젝트에서{' '}
             <span className="inline-block px-2 py-1 rounded-md bg-white font-semibold">
-              실제 누군가의 행동을 변화
-            </span>
-            시키는 서비스를 만들었다는 점이 인상 깊었습니다. 그 이후로는
-            기술적인 완성도뿐만 아니라{' '}
+              실시간 드로잉 데이터 동기화 지연
+            </span>{' '}
+            문제를 해결했을 때가 가장 보람 있었습니다. 처음에는 Socket.IO 이벤트
+            처리 순서가 꼬여 그림이 일부 누락되는 버그가 있었는데, 디버깅을 통해
             <span className="inline-block px-2 py-1 rounded-md bg-white font-semibold">
-              사람 중심의 개발
+              데이터 전송 구조를 개선
             </span>
-            을 목표로 삼고 있습니다.
+            하고,{' '}
+            <span className="inline-block px-2 py-1 rounded-md bg-white font-semibold">
+              requestAnimationFrame
+            </span>{' '}
+            기반으로 렌더링 타이밍을 맞춰 문제를 해결했습니다. 그 결과 모든
+            참가자 화면에서 드로잉이 부드럽게 동기화되었고, 팀원들도 “이제
+            게임이 훨씬 자연스럽다”는 피드백을 주어 큰 성취감을 느꼈습니다. 이
+            경험을 통해{' '}
+            <span className="inline-block px-2 py-1 rounded-md bg-white font-semibold">
+              문제 원인을 집요하게 파고들고, 해결책을 찾는 과정의 즐거움
+            </span>
+            을 배웠습니다.
           </p>
         </div>
       </div>
