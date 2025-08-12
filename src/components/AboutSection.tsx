@@ -63,7 +63,7 @@ const AboutSection = () => {
                 <hr />
               </li>
               <StyledListItem>
-                (주)그린비지니스 웹디자이너 근무 (2021.03 ~ 2021.10)
+                (주)그린비지니스 웹디자이너/퍼블리셔 근무 (2021.03 ~ 2021.10)
               </StyledListItem>
               <StyledListItem>
                 주식회사 에이피메타랩스 웹디자이너/퍼블리셔 근무 (2022.01 ~
