@@ -13,14 +13,14 @@ export const projects: ProjectCardProps[] = [
     notionUrl:
       'https://jm-front.notion.site/Doodle-Play-1c2fcc0bc00b806085fae7886a9a2b63?pvs=4',
     githubUrl: 'https://github.com/DoodlePlay/Frontend',
-    webUrl: 'https://www.doodleplay.xyz/',
+    webUrl: 'https://doodle-play.vercel.app/',
     figmaUrl:
       "https://www.figma.com/design/1ZCji1TU18PFMzwbLtL32j/Two-Meet's-team-library?node-id=2317-191&t=3ET9eArK5Bbqwqah-1",
     summary:
-      '웹소켓 기반의 실시간 그림 퀴즈 플랫폼 - 높은 수준의 사용자 경험 기술적 도전과 창의적 재미를 동시에 구현하기 위해, 웹 애플리케이션의 형태로 웹 게임을 기획',
+      '웹소켓 기반의 실시간 그림 퀴즈 플랫폼 - 높은 수준의 사용자 경험 기술적 도전과 창의적 재미를 동시에 구현하기 위해, 웹 애플리케이션의 형태로 웹 게임을 기획 (* 현재 aws 비용 문제로 인해 온라인 플레이를 위한 서버 중지 상태입니다.)',
     techStackByCategory: {
       frontend: ['React', 'Next.js', 'Typescript', 'Zustand'],
-      backend: ['Firebase Realtime DB', 'Socket.io'],
+      backend: ['Firebase Realtime DB', 'Socket.io', 'aws'],
       styling: ['TailwindCSS', 'Framer-motion'],
       collaboration: ['Figma', 'GitHub', 'Vercel'],
       testing: ['Vitest'],
